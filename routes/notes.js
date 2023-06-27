@@ -19,3 +19,32 @@ notes.get('/:note_id', (req, res) => {
         : res.json('ID not associated with any note');
     });
 });
+
+notes.post('/', (req, res) => {
+    console.log(req.body);
+    const { title, text } = req.body;
+    if (req.body) {
+        const newNote = { 
+            id: uuidv4(), 
+            text, 
+            title,
+        };
+        readAndAppend(newNote, './db/db.json');
+        res.json('New note added!');
+    } else {
+        res.errored("Error, try again");
+    }
+});
+
+notes.delete('/:note_id', (req, res) => {
+    const noteId = req.params.note_id;
+    readFromFile('./db/db.json')
+    .then((data) => JSON.parse(data))
+    .then((json) => {
+        const result = json.filter((note) => note.id !== noteId);
+        writeToFile('./db/db.json', result);
+        res.json(`${noteId} erased`);
+    });
+});
+
+module.exports = notes;
