@@ -3,7 +3,6 @@
 # Project description
 Tasked to modify starter code to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file. The application’s front end has already been created. The task is to build the back end, connect the two, and then deploy the entire application to Heroku.
 
-
 ## User Story
 AS A small business owner
 I WANT to be able to write and save notes
@@ -25,10 +24,10 @@ WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 
 # Screenshot of aplication
-
+<img src="./public/assets/css/images/Screenshot 2023-06-27 at 21.08.26.jpeg" alt="deployed website screenshot">
 
 # Deployed link
-<img src="./public/assets/css/images/Screenshot 2023-06-27 at 21.08.26.jpeg" alt="deployed website screenshot">
+https://week-11-note-taker-application-a2315227b4b7.herokuapp.com/notes
 
 # License
 N/A
